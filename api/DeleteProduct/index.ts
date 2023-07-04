@@ -10,6 +10,8 @@ const httpTrigger: AzureFunction = async function (
   try {
     const id = req.params.id;
     const brand = req.body.brand;
+    console.log('id to delete: ', id);
+    console.log('brand to delete: ', brand);
     const result = await productsService.delete(id, brand.name);
     response = { body: result, status: 200 };
   } catch (err) {

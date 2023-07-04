@@ -9,6 +9,7 @@ const httpTrigger: AzureFunction = async function (
 
   try {
     const product = req.body;
+    console.log('Received product: ', product);  // Add this line
     const result = await productsService.update(product);
     response = { body: result, status: 200 };
   } catch (err) {
